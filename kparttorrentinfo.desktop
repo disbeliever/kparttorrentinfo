@@ -1,0 +1,6 @@
+[Desktop Entry]
+Name=KPartTorrentInfo
+MimeType=application/x-bittorrent;
+X-KDE-ServiceTypes=KParts/ReadOnlyPart
+X-KDE-Library=kparttorrentinfo
+Type=Service
