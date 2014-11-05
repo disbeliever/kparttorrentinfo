@@ -1,0 +1,46 @@
+# Created by https://www.gitignore.io
+
+### CMake ###
+CMakeCache.txt
+CMakeFiles
+CMakeTmp
+Makefile
+cmake_install.cmake
+cmake_uninstall.cmake
+install_manifest.txt
+
+
+### Qt ###
+# C++ objects and libs
+
+*.slo
+*.lo
+*.o
+*.a
+*.la
+*.lai
+*.so
+*.dll
+*.dylib
+
+# Qt-es
+
+/.qmake.cache
+/.qmake.stash
+*.pro.user
+*.pro.user.*
+*.moc
+moc_*.cpp
+qrc_*.cpp
+ui_*.h
+Makefile*
+*-build-*
+*_automoc.cpp*
+
+# QtCreator
+
+*.autosave
+
+#QtCtreator Qml
+*.qmlproject.user
+*.qmlproject.user.*
