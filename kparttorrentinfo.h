@@ -1,26 +1,28 @@
-#ifndef _HELLOPART_H_
-#define _HELLOPART_H_
+#ifndef _KPARTTORRENTINFO_H_
+#define _KPARTTORRENTINFO_H_
  
 #include <kparts/part.h>
 #include <kparts/factory.h>
 #include <QFile>
 #include <QLabel>
+#include <QtGui>
 
 class kparttorrentinfo : public KParts::ReadOnlyPart
 {
   Q_OBJECT
  
  private:
-    QLabel *mMainWidget;
+    QWidget *window;
+    QLabel *labelComment;
+    QHBoxLayout *box;
  
  public:
     kparttorrentinfo(QWidget *parentWidget, QObject *parent, const QVariantList&);
  
-    QLabel* MainWidget() { return mMainWidget; };
+    QWidget* MainWidget() { return window; };
  
     virtual ~kparttorrentinfo();
-    bool openFile(){};
-    bool saveFile(){};
+    bool openFile();
 };
  
-#endif // _HELLOPART_H_
+#endif // _KPARTTORRENTINFO_H_
