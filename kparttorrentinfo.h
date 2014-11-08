@@ -14,7 +14,9 @@ class kparttorrentinfo : public KParts::ReadOnlyPart
  private:
     QWidget *window;
     QLabel *labelComment;
+    QLineEdit *editComment;
     QHBoxLayout *box;
+    void initGUI();
  
  public:
     kparttorrentinfo(QWidget *parentWidget, QObject *parent, const QVariantList&);

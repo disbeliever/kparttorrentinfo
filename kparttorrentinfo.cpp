@@ -16,6 +16,11 @@ kparttorrentinfo::kparttorrentinfo(QWidget *parentWidget, QObject *parent, const
   // we need an instance
   setComponentData( torrentPartFactory::componentData() );
 
+  initGUI();
+}
+
+void kparttorrentinfo::initGUI()
+{
   window = new QWidget();
   box = new QHBoxLayout();
 
@@ -24,6 +29,12 @@ kparttorrentinfo::kparttorrentinfo(QWidget *parentWidget, QObject *parent, const
 
   window->setLayout(box);
   setWidget(window);
+
+  labelComment->setText("Comment:");
+
+  editComment = new QLineEdit();
+  editComment->setReadOnly(true);
+  box->addWidget(editComment);
 }
  
 kparttorrentinfo::~kparttorrentinfo()
@@ -37,7 +48,6 @@ bool kparttorrentinfo::openFile()
     labelComment->setText("failed to open file");
     return false;
   }
-  labelComment->setText("file opened successfully");
 
   QTextStream in(&file);
   in.setCodec("UTF-8");
@@ -51,12 +61,6 @@ bool kparttorrentinfo::openFile()
   int lengthComment = data.mid(idxComment + 7, idxCommentStart - (idxComment + 7)).toInt(&ok, 10);
   if (ok) {
     QString comment = data.mid(idxCommentStart + 1, lengthComment);
-    labelComment->setText("Comment:");
-
-
-    QLineEdit *editComment = new QLineEdit();
-    editComment->setReadOnly(true);
-    box->addWidget(editComment);
     editComment->setText(comment);
   }
 
