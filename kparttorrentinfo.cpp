@@ -26,6 +26,7 @@ void kparttorrentinfo::initGUI()
 
   labelComment = new QLabel();
   box->addWidget(labelComment);
+  box->setAlignment(Qt::AlignTop);
 
   window->setLayout(box);
   setWidget(window);
